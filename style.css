@@ -69,13 +69,14 @@ body {
   width: 40%;
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  
 }
 #hR a {
   margin: 0;
   font-size: 24px;
-  color: black;
+  color: #ffeb00;
   text-decoration-line: none;
 }
 .box-button {
@@ -86,12 +87,15 @@ body {
   transition: 0.1s ease-in-out;
   user-select: none;
   color: black;
+  margin: 0px 5px;
+ 
 }
 
 .button {
   background-color: #ffeb00;
   border: 4px solid #d3c102;
   padding: 3px 8px;
+ 
 }
 
 .button span {
@@ -328,4 +332,244 @@ body {
   width: auto;
   text-align: center;
   justify-content: center;
+}
+@media screen and (max-width: 320px) {
+  #header {
+  width: 100vw;
+  }
+  #hR {
+    width: 100vw;
+    flex-direction: column;
+    margin-top: 10px;
+    background-color: #d3c102;
+  }
+  #hero, #hero1, #hero2, #hero3 {
+    flex-direction: column;
+  }
+  #left, #right, #lleft, #lright {
+    width: 100%;
+  }
+  #footer, #footer1, #footer2 {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+}
+
+/* Simple menu button */
+#menuButton {
+  display: none;  /* Hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+#mobileMenu {
+  display: none;  
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #4379f2;
+  padding: 60px 20px 20px;
+  border-left: 5px solid #333;
+}
+
+#mobileMenu a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px 0;
+  cursor: pointer;
+  border: 4px solid black;
+  background-color: #6b662b;
+  padding-bottom: 10px;
+  transition: 0.1s ease-in-out;
+  user-select: none;
+  text-align: center;
+  position: relative;  
+}
+
+#mobileMenu a span {
+  display: block;
+  background-color: #ffeb00;
+  border: 4px solid #d3c102;
+  padding: 3px 8px;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  position: relative; 
+  z-index: 1; 
+}
+
+
+#mobileMenu a:active {
+  padding-bottom: 0;
+  margin-bottom: 20px; 
+}
+
+#mobileMenu a:active span {
+  transform: translateY(10px);
+}
+
+#mobileMenu .box-button {
+  margin-top: 20px;
+}
+
+
+#mobileMenu.active {
+  display: block;
+}
+
+
+@media screen and (max-width: 768px) {
+  #menuButton {
+    display: block; 
+  }
+
+  #hR {
+    display: none; 
+  }
+
+  #header {
+    height: auto;
+    min-height: 100px;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  #hL {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+
+  #hL h1 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+ 
+  #hero {
+    flex-direction: column;
+    padding: 15px;
+    margin: 20px 0;
+    gap: 20px;
+  }
+
+  #left, #right {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+  }
+
+  #left {
+    margin-bottom: 20px;
+  }
+
+  #left h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  #left h2 {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  #right {
+    margin-top: 20px;
+  }
+
+  #right img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  
+  #footer {
+    height: auto;
+    min-height: 80px;
+    padding: 20px 15px;
+    margin-top: 20px;
+  }
+
+  #footer h1 {
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  /* Mobile menu adjustments */
+  #mobileMenu {
+    padding-top: 80px;  /* Increased to prevent overlap with header */
+  }
+}
+
+/* Back button specific styles */
+#mobileMenu .back-button {
+  margin-bottom: 30px;  /* More space after back button */
+  background-color: #6b662b;  /* Same as other buttons */
+}
+
+#mobileMenu .back-button span {
+  background-color: #ffeb00;  /* Same as other buttons */
+  border: 4px solid #d3c102;
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 480px) {
+  #header {
+    min-height: 80px;
+    padding: 10px;
+  }
+
+  #hL {
+    padding: 5px;
+  }
+
+  #hL h1 {
+    font-size: 18px;
+  }
+
+  #hero {
+    padding: 10px;
+    margin: 15px 0;
+  }
+
+  #left h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  #left h2 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  #footer {
+    min-height: 60px;
+    padding: 15px 10px;
+  }
+
+  #footer h1 {
+    font-size: 20px;
+  }
+
+  #mobileMenu {
+    padding-top: 70px;  /* Adjusted for smaller header */
+  }
 }
